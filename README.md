@@ -1,59 +1,110 @@
-# Clase3
+# Angular Intermedio - Servicios y Pipes
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.12.
+## Descripción del proyecto
 
-## Development server
+Este proyecto corresponde a la actividad **Angular Intermedio: Servicios**, Módulo 1 - Unidad 3.
 
-To start a local development server, run:
+Se desarrolló una aplicación para gestionar una lista de productos utilizando un servicio de Angular. La aplicación permite visualizar productos, agregar nuevos productos simulados y eliminarlos dinámicamente.
+
+Además, se implementaron pipes estándar y un pipe personalizado para transformar la información antes de mostrarla en pantalla.
+
+## Funcionalidades implementadas
+
+### Servicio productos
+
+El servicio contiene los siguientes métodos:
+
+* `getProductos()`: obtiene la lista de productos.
+* `addProducto()`: agrega un producto a la lista.
+* `deleteProducto()`: elimina un producto de la lista.
+
+### Componente lista-productos
+
+* Inyección del servicio mediante Dependency Injection.
+* Uso del ciclo de vida `ngOnInit()`.
+* Carga inicial de productos desde el servicio.
+
+### Pipes utilizados
+
+#### Pipes estándar
+
+* `currency`: para mostrar los precios en formato monetario.
+* `date`: para mostrar la fecha de alta de cada producto.
+
+#### Pipe personalizado
+
+* `descuento`: calcula el precio final de un producto aplicando un porcentaje de descuento.
+
+## Interacción de la aplicación
+
+La aplicación permite:
+
+* Visualizar la lista de productos.
+* Agregar productos simulados.
+* Eliminar productos.
+* Mostrar un mensaje cuando la lista queda vacía mediante `*ngIf`.
+
+## Instalación y ejecución
+
+Clonar el repositorio:
+
+```bash
+git clone URL_DEL_REPOSITORIO
+```
+
+Ingresar al proyecto:
+
+```bash
+cd CLASE3
+```
+
+Instalar dependencias:
+
+```bash
+npm install
+```
+
+Ejecutar la aplicación:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Abrir en el navegador:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```text
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Capturas de pantalla
 
-```bash
-ng generate --help
-```
+### Lista de productos cargada
 
-## Building
+![Lista de productos](src/assets/img/lista-productos.png)
 
-To build the project run:
+### Agregar producto
 
-```bash
-ng build
-```
+![Agregar producto](src/assets/img/agregar-producto.png)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Eliminar producto
 
-## Running unit tests
+![Eliminar producto](src/assets/img/eliminar-producto.png)
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### Lista vacía usando ngIf
 
-```bash
-ng test
-```
+![Lista vacía](src/assets/img/lista-vacia.png)
 
-## Running end-to-end tests
+## Bibliografía
 
-For end-to-end (e2e) testing, run:
+* Angular Documentation. https://angular.dev
+* Angular Dependency Injection. https://angular.dev/guide/di/dependency-injection
+* Freeman, A. (2020). *Pro Angular 9*. Apress.
 
-```bash
-ng e2e
-```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Autor
 
-## Additional Resources
+María Cecilia Pezzini
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Curso: Angular Intermedio
+
+Módulo 1 - Unidad 3 - Servicios

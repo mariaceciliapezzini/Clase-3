@@ -1,0 +1,60 @@
+<div>
+
+  <h1>Lista de productos</h1>
+
+  <button (click)="agregarProductoSimulado()">
+    Agregar producto simulado
+  </button>
+
+  @if(productosList.length > 0) {
+
+    <div>
+
+      @for(producto of productosList; track producto.id) {
+
+        <div>
+
+          <h3>{{ producto.nombre }}</h3>
+
+          <p>
+            Precio:
+            {{ producto.precio | currency:'ARS':'symbol':'1.0-0' }}
+          </p>
+
+          <p>
+            Fecha alta:
+            {{ producto.fechaAlta | date:'dd/MM/yyyy' }}
+          </p>
+
+         <p>
+             Precio: ${{ producto.precio | number:'1.0-0' }}
+         </p>
+
+          <p>
+             Descuento: {{ producto.descuento }}%
+          </p>
+
+           <p>
+            Precio con descuento:
+            ${{ producto.precio | descuento:producto.descuento | number:'1.0-0' }}
+            </p>
+
+          <button (click)="eliminarProducto(producto.id)">
+            Eliminar
+          </button>
+
+          <hr>
+
+        </div>
+
+      }
+
+    </div>
+
+  } @else {
+
+    <p>No hay productos cargados</p>
+
+  }
+
+</div>
